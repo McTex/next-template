@@ -1,0 +1,32 @@
+/* Noto Serif JP */
+@font-face {
+  font-weight: 300;
+  font-family: 'NotoSerif';
+  font-style: normal;
+  src: url('/assets/fonts/NotoSerifJP/NotoSerifJP-Light.woff') format('woff'),
+    url('/assets/fonts/NotoSerifJP/NotoSerifJP-Light.woff2') format('woff2'),
+    url('/assets/fonts/NotoSerifJP/NotoSerifJP-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-weight: 600;
+  font-family: 'NotoSerif';
+  font-style: normal;
+  src: url('/assets/fonts/NotoSerifJP/NotoSerifJP-SemiBold.woff') format('woff'),
+    url('/assets/fonts/NotoSerifJP/NotoSerifJP-SemiBold.woff2') format('woff2'),
+    url('/assets/fonts/NotoSerifJP/NotoSerifJP-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: 'NotoSerif';
+  font-style: normal;
+  src: url('/assets/fonts/NotoSerifJP/NotoSerifJP-Bold.woff') format('woff'),
+    url('/assets/fonts/NotoSerifJP/NotoSerifJP-Bold.woff2') format('woff2'),
+    url('/assets/fonts/NotoSerifJP/NotoSerifJP-Bold.otf') format('opentype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;0,600;0,700;1,500&display=swap');
+
+//TODO : IEなど検証してsvgテキストうまく　いっていたらitalicは削除

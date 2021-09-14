@@ -1,0 +1,214 @@
+@use '~/styles/base/config' as c;
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  backface-visibility: inherit;
+}
+
+html {
+  position: relative;
+  color: c.$colorNavy;
+  font-size: 14px;
+  font-family: c.$baseFont;
+  line-height: c.$lineheightBase;
+  letter-spacing: 0.06em;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  background: #fff;
+  @include c.mq-down() {
+    line-height: c.$lineheightBaseSp;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+body {
+  position: relative;
+  width: 100%;
+  overscroll-behavior-y: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+pre {
+  margin: 0;
+  padding: 0;
+}
+
+blockquote {
+  margin: 0;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+dl {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+dd {
+  margin-left: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+address,
+em,
+cite,
+dfn,
+var,
+i {
+  font-style: inherit;
+}
+
+img,
+iframe,
+embed,
+object,
+video,
+audio,
+svg,
+canvas {
+  vertical-align: bottom;
+}
+
+img,
+iframe,
+video,
+input,
+select,
+textarea {
+  max-width: 100%;
+  height: auto;
+}
+input::placeholder,
+textarea::placeholder,
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #aaa;
+}
+
+svg {
+  fill: currentcolor;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+th {
+  text-align: inherit;
+}
+
+input,
+button,
+select,
+textarea {
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  background-color: transparent;
+  border: 0;
+  @include c.mq-down() {
+    font-size: 16px;
+  }
+}
+
+select {
+  border-radius: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  @include c.mq-down() {
+    font-size: 16px;
+  }
+}
+
+::-ms-expand {
+  display: none;
+}
+
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+a {
+  color: c.$colorNavy;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+main {
+  position: relative;
+  z-index: c.z-index(content);
+}
+
+[hidden][hidden] {
+  display: none !important;
+}
+.u-displayPC {
+  display: block;
+  @include c.mq-down() {
+    display: none;
+  }
+}
+.u-displaySP {
+  display: none;
+  @include c.mq-down() {
+    display: block;
+  }
+}
+
+.u-hoverAlpha {
+  transition: opacity 0.2s;
+  @include c.mq-up() {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@use '~/styles/utils/variables' as var;
+
+// --- MEDIA QUERY ---
+$breakpoint-up: (
+  'sm': 'screen and (min-width: 540px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 1024px)',
+  'xl': 'screen and (min-width: 1100px)',
+) !default;
+
+$breakpoint-down: (
+  'sm': 'screen and (max-width: 539px)',
+  'md': 'screen and (max-width: 767px)',
+  'lg': 'screen and (max-width: 1023px)',
+  'xl': 'screen and (max-width: 1099px)',
+) !default;
+
+$pcInnerWidth: (
+  'narrow': '880px',
+  'default': '1020px',
+  'wide': '1120px',
+) !default;
+
+$spInnerPadding: (
+  'narrow': '10.6vw',
+  'default': '5.3vw',
+  'wide': '5.3vw',
+) !default;
+
+@mixin mq-up($breakpoint: md) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq-down($breakpoint: md) {
+  @media #{map-get($breakpoint-down, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin inner($type: default) {
+  width: 100%;
+  margin: 0 auto;
+  @include mq-up() {
+    max-width: #{map-get($pcInnerWidth, $type)};
+    padding: 0 10px;
+  }
+  @include mq-down() {
+    padding: 0 #{map-get($spInnerPadding, $type)};
+  }
+}
+
+@mixin customTransition(
+  $property: all,
+  $duration: 0.5,
+  $delay: 0,
+  $timing: 'linear'
+) {
+  transition-delay: $delay + s;
+  transition-timing-function: $timing;
+  transition-duration: $duration + s;
+  transition-property: $property;
+}
+
+@mixin blurShowEffect {
+  // transform: translateZ(0);
+  opacity: 0;
+  // filter: blur(20px);
+  // transition: opacity 0.6s ease-in, filter 0.6s ease-in;
+  transition: opacity 0.6s 0.5s ease-in;
+  &--show {
+    opacity: 1;
+    // filter: blur(0);
+  }
+}
